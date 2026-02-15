@@ -10,8 +10,7 @@ from langchain.output_parsers import StructuredOutputParser
 # Define ResponseSchemas for invoice extraction
 shipping_address_schema = ResponseSchema(
     name="shipping_address",
-    description="Shipping address details including Name, \
-    Address, and State Code"
+    description="Shipping address details including Name, Address, and State Code"
 )
 
 delivery_schema = ResponseSchema(
@@ -61,8 +60,7 @@ order_date_schema = ResponseSchema(
 
 quantity_schema = ResponseSchema(
     name="quantity",
-    description="Qty (Quantity) - the numeric quantity per item \
-    from the items table, typically found in a Qty column"
+    description="Qty"
 )
 
 asin_schema = ResponseSchema(
@@ -88,9 +86,7 @@ hsn_schema = ResponseSchema(
 
 items_schema = ResponseSchema(
     name="items",
-    description="List of purchased item descriptions - extract \
-    only the strings BEFORE the pipe | character, which contains \
-    the product name and details"
+    description="List of purchased item descriptions - extract only strings BEFORE the pipe | character"
 )
 
 response_schemas = [
@@ -116,7 +112,7 @@ output_parser = StructuredOutputParser.from_response_schemas(response_schemas)
 
 def main():
     # Expand path properly
-    pdf_path = os.path.expanduser("~/Desktop/amazon_invoice/118.pdf")
+    pdf_path = os.path.expanduser("~/Desktop/amazon_invoice/115.pdf")
 
     if not os.path.exists(pdf_path):
         raise FileNotFoundError(f"PDF not found at: {pdf_path}")

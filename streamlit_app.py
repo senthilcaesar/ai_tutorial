@@ -89,7 +89,7 @@ def get_response_schemas():
         ),
         ResponseSchema(
             name="quantity",
-            description="Qty (Quantity) - the numeric quantity per item from the items table"
+            description="Qty"
         ),
         ResponseSchema(
             name="asin",
